@@ -40,8 +40,8 @@ for (const entry of requiredFilesEntries) {
   }
 }
 
-if (packageJson.bin?.proof !== "./bin/run.js") {
-  errors.push("package.json bin.proof must point to ./bin/run.js");
+if (packageJson.bin?.proof !== "bin/run.js") {
+  errors.push("package.json bin.proof must point to bin/run.js");
 }
 
 const dependencyBlocks = [

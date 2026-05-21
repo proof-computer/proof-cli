@@ -19,7 +19,7 @@ test("prints about information", () => {
   const result = runProof(["about"]);
 
   assert.equal(result.status, 0);
-  assert.match(result.stdout, /proof 0\.1\.1/u);
+  assert.match(result.stdout, /proof 0\.1\.2/u);
   assert.match(result.stdout, /@proof-computer\/proof-cli-switchboard/u);
   assert.match(result.stdout, /Private plugins: Blackbox, Lockbox, Slipway/u);
 });

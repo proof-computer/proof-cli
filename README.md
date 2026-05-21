@@ -8,8 +8,6 @@ verification. Product commands are provided by oclif plugins.
 ## Install
 
 ```fish
-npm config set @proof-computer:registry https://npm.pkg.github.com
-npm login --scope=@proof-computer --auth-type=legacy --registry=https://npm.pkg.github.com
 npm install --global @proof-computer/proof-cli
 proof --help
 ```
