@@ -1,0 +1,73 @@
+{
+  "name": "@proof-computer/proof-cli",
+  "version": "0.1.1",
+  "description": "PROOF command line interface.",
+  "private": false,
+  "type": "module",
+  "packageManager": "pnpm@10.33.0",
+  "bin": {
+    "proof": "./bin/run.js"
+  },
+  "files": [
+    "bin",
+    "dist",
+    "oclif.manifest.json",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json && oclif manifest",
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test test/*.test.ts",
+    "prepare": "pnpm run build && node scripts/verify-package.mjs",
+    "pack:dry-run": "npm pack --dry-run --json --ignore-scripts --cache .tmp/npm-cache",
+    "smoke:pack": "node scripts/smoke-installed-package.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/proof-computer/proof-cli.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "@oclif/core": "^4.11.3",
+    "@oclif/plugin-commands": "^4.1.54",
+    "@oclif/plugin-help": "^6.2.49",
+    "@oclif/plugin-plugins": "^5.4.68"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "oclif": "^4.23.7",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
+  },
+  "oclif": {
+    "bin": "proof",
+    "dirname": "proof",
+    "commands": "./dist/commands",
+    "topicSeparator": " ",
+    "plugins": [
+      "@oclif/plugin-help",
+      "@oclif/plugin-plugins",
+      "@oclif/plugin-commands"
+    ],
+    "topics": {
+      "switchboard": {
+        "description": "Switchboard commands from @proof-computer/proof-cli-switchboard"
+      },
+      "blackbox": {
+        "description": "Blackbox commands from a private PROOF plugin"
+      },
+      "lockbox": {
+        "description": "Lockbox commands from a private PROOF plugin"
+      },
+      "slipway": {
+        "description": "Slipway commands from a private PROOF plugin"
+      }
+    }
+  },
+  "license": "UNLICENSED"
+}
