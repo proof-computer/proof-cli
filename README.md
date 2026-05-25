@@ -14,15 +14,17 @@ proof --help
 
 ## Product Plugins
 
-Switchboard will be the first public plugin:
+Switchboard and Blackbox are public plugins:
 
 ```fish
 proof plugins install @proof-computer/proof-cli-switchboard
 proof switchboard --help
+proof plugins install @proof-computer/proof-cli-blackbox
+proof blackbox --help
 ```
 
-Blackbox, Lockbox, and Slipway plugins remain private until those product
-surfaces are intentionally exposed.
+Lockbox and Slipway plugins remain private until those product surfaces are
+intentionally exposed.
 
 ## Development
 

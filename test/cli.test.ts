@@ -19,9 +19,10 @@ test("prints about information", () => {
   const result = runProof(["about"]);
 
   assert.equal(result.status, 0);
-  assert.match(result.stdout, /proof 0\.1\.2/u);
+  assert.match(result.stdout, /proof 0\.2\.0/u);
   assert.match(result.stdout, /@proof-computer\/proof-cli-switchboard/u);
-  assert.match(result.stdout, /Private plugins: Blackbox, Lockbox, Slipway/u);
+  assert.match(result.stdout, /@proof-computer\/proof-cli-blackbox/u);
+  assert.match(result.stdout, /Private plugins: Lockbox, Slipway/u);
 });
 
 test("loads oclif plugin management help", () => {

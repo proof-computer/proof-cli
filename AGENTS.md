@@ -8,8 +8,8 @@ binary.
 - Keep this repo as the root CLI package only.
 - Do not add private product plugins as root dependencies.
 - Product command implementations belong in plugins. Switchboard is the first
-  public plugin; Blackbox, Lockbox, and Slipway remain private until explicitly
-  exposed.
+  public plugin, Blackbox is now the second public plugin, and Lockbox/Slipway
+  remain private until explicitly exposed.
 - Preserve compatibility bins in product repos during migration. Do not fork
   behavior between `proof <product> ...` and existing product binaries.
 

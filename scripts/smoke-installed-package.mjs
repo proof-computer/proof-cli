@@ -25,7 +25,7 @@ try {
   assertIncludes(help.stdout, "about");
 
   const about = run(proofBin, ["about"]);
-  assertIncludes(about.stdout, "proof 0.1.2");
+  assertIncludes(about.stdout, "proof 0.2.0");
   assertIncludes(about.stdout, "@proof-computer/proof-cli-switchboard");
 
   console.log("Installed package smoke passed.");
