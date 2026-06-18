@@ -22,7 +22,8 @@ test("prints about information", () => {
   assert.match(result.stdout, /proof 0\.2\.0/u);
   assert.match(result.stdout, /@proof-computer\/proof-cli-baran/u);
   assert.match(result.stdout, /@proof-computer\/proof-cli-blackbox/u);
-  assert.match(result.stdout, /Private plugins: Lockbox, Liskov/u);
+  assert.match(result.stdout, /@proof-computer\/proof-cli-liskov/u);
+  assert.match(result.stdout, /Private plugins: Lockbox/u);
 });
 
 test("loads oclif plugin management help", () => {

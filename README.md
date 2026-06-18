@@ -14,16 +14,18 @@ proof --help
 
 ## Product Plugins
 
-Baran and Blackbox are public plugins:
+Baran, Blackbox, and Liskov are public plugins:
 
 ```fish
 proof plugins install @proof-computer/proof-cli-baran
 proof baran --help
 proof plugins install @proof-computer/proof-cli-blackbox
 proof blackbox --help
+proof plugins install @proof-computer/proof-cli-liskov
+proof liskov --help
 ```
 
-Lockbox and Liskov plugins remain private until those product surfaces are
+The Lockbox plugin remains private until that product surface is
 intentionally exposed.
 
 ## Development
