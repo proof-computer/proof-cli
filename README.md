@@ -14,16 +14,16 @@ proof --help
 
 ## Product Plugins
 
-Switchboard and Blackbox are public plugins:
+Baran and Blackbox are public plugins:
 
 ```fish
-proof plugins install @proof-computer/proof-cli-switchboard
-proof switchboard --help
+proof plugins install @proof-computer/proof-cli-baran
+proof baran --help
 proof plugins install @proof-computer/proof-cli-blackbox
 proof blackbox --help
 ```
 
-Lockbox and Slipway plugins remain private until those product surfaces are
+Lockbox and Liskov plugins remain private until those product surfaces are
 intentionally exposed.
 
 ## Development
@@ -48,9 +48,9 @@ pnpm smoke:pack
 
 ## Plugin Contract
 
-- Product plugins own one top-level topic such as `switchboard`, `blackbox`,
-  `lockbox`, or `slipway`.
+- Product plugins own one top-level topic such as `baran`, `blackbox`,
+  `lockbox`, or `liskov`.
 - The public root package must not depend on private product plugins.
-- Compatibility bins such as `switchboard` and `blackbox` stay in their
+- Compatibility bins such as `baran` and `blackbox` stay in their
   product repos during migration and should delegate to shared command
   implementations rather than fork behavior.

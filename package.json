@@ -52,8 +52,8 @@
       "@oclif/plugin-commands"
     ],
     "topics": {
-      "switchboard": {
-        "description": "Switchboard commands from @proof-computer/proof-cli-switchboard"
+      "baran": {
+        "description": "Baran commands from @proof-computer/proof-cli-baran"
       },
       "blackbox": {
         "description": "Blackbox commands from @proof-computer/proof-cli-blackbox"
@@ -61,8 +61,8 @@
       "lockbox": {
         "description": "Lockbox commands from a private PROOF plugin"
       },
-      "slipway": {
-        "description": "Slipway commands from a private PROOF plugin"
+      "liskov": {
+        "description": "Liskov commands from @proof-computer/proof-cli-liskov"
       }
     }
   },

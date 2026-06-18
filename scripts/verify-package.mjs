@@ -20,7 +20,7 @@ const requiredFilesEntries = [
 const forbiddenRootDependencies = [
   "@proof-computer/proof-cli-blackbox",
   "@proof-computer/proof-cli-lockbox",
-  "@proof-computer/proof-cli-slipway",
+  "@proof-computer/proof-cli-liskov",
   "@proof/blackbox-cli"
 ];
 

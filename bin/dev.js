@@ -11,7 +11,7 @@ await execute({ development: true, dir: import.meta.url });
 
 function preserveCompatibilityHelpFlags(argv) {
   const args = argv.slice(2);
-  if (args[0] !== "switchboard" || args.includes("--")) {
+  if (args[0] !== "baran" || args.includes("--")) {
     return;
   }
   const helpIndex = args.indexOf("--help");
