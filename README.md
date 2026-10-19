@@ -56,3 +56,8 @@ pnpm smoke:pack
 - Compatibility bins such as `baran` and `blackbox` stay in their
   product repos during migration and should delegate to shared command
   implementations rather than fork behavior.
+
+## License
+
+Licensed under the Functional Source License 1.1, with Apache-2.0 as the future
+license. Earlier release tags remain under their previous terms. See [LICENSE](LICENSE).
