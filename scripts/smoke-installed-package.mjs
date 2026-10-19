@@ -1,4 +1,4 @@
-import { mkdtemp, rm } from "node:fs/promises";
+import { mkdir, mkdtemp, readdir, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -6,16 +6,17 @@ import { spawnSync } from "node:child_process";
 
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const prefix = await mkdtemp(path.join(tmpdir(), "proof-cli-smoke-"));
-let tarballPath;
 
 try {
   const npmCache = path.join(prefix, "npm-cache");
-  const pack = run("npm", ["pack", "--json", "--ignore-scripts", "--cache", npmCache], { cwd: repoRoot });
-  const tarball = JSON.parse(pack.stdout)[0]?.filename;
-  if (!tarball) {
-    throw new Error("npm pack did not report a tarball filename");
+  const packDir = path.join(prefix, "pack");
+  await mkdir(packDir);
+  run("npm", ["pack", "--ignore-scripts", "--pack-destination", packDir, "--cache", npmCache], { cwd: repoRoot });
+  const tarballs = (await readdir(packDir)).filter((filename) => filename.endsWith(".tgz"));
+  if (tarballs.length !== 1) {
+    throw new Error(`Expected npm pack to create exactly one tarball, found ${tarballs.length}`);
   }
-  tarballPath = path.join(repoRoot, tarball);
+  const tarballPath = path.join(packDir, tarballs[0]);
 
   run("npm", ["install", "--global", "--prefix", prefix, "--cache", npmCache, tarballPath], { cwd: repoRoot });
 
@@ -30,9 +31,6 @@ try {
 
   console.log("Installed package smoke passed.");
 } finally {
-  if (tarballPath) {
-    await rm(tarballPath, { force: true });
-  }
   await rm(prefix, { recursive: true, force: true });
 }
 
