@@ -12,7 +12,8 @@
     "bin",
     "dist",
     "oclif.manifest.json",
-    "README.md"
+    "README.md",
+    "LICENSE"
   ],
   "scripts": {
     "build": "tsc -p tsconfig.json && oclif manifest",
@@ -66,5 +67,5 @@
       }
     }
   },
-  "license": "UNLICENSED"
+  "license": "FSL-1.1-Apache-2.0"
 }
